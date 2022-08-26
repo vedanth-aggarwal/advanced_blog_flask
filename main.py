@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
@@ -13,13 +14,16 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from flask_gravatar import Gravatar
+from os import getenv
+from dotenv import load_dotenv
+load_dotenv()
 
 Base = declarative_base()
 
 
 login_manager = LoginManager()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = getenv('SECRET_KEY')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 

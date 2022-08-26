@@ -19,10 +19,10 @@ class RegisterForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(message='Empty Field')])
     password = PasswordField("Password", validators=[DataRequired(message='Empty Field')])
     name = StringField("Name", validators=[DataRequired(message='Empty Field')])
-    submit = SubmitField('Submit Post')
+    submit = SubmitField('Register')
 
 class LoginForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(message='Empty Field')])
     password = PasswordField("Password", validators=[DataRequired(message='Empty Field')])
     name = StringField("Name", validators=[DataRequired(message='Empty Field')])
-    submit = SubmitField('Submit Post')
+    submit = SubmitField('Login')
